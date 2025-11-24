@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Activity 3 - JavaScript</title>
+	<title>JavaScript Activity 3</title>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="icon" href="/images/icon.png" type="image/png">
 </head>
@@ -11,26 +11,17 @@
 	<header class="flex justify-center mb-8">
 		<h1 class="text-3xl text-center">Activity 3</h1>
 	</header>
-	<main class="space-y-8 pb-52">
-		<div class="flex gap-4">
-			<button id="button1-1" class="bg-blue-500 py-2 px-4 rounded text-white">log by id using getElementById</button>
-			<button id="button1-2" class="bg-pink-500 py-2 px-4 rounded text-white">log by id using querySelector</button>
-			<button class="button2 bg-orange-500 py-2 px-4 rounded text-white">log by class</button>
-			<span class="py-2 px-4 rounded bg-gray-300">log by element</span>
-			<button id="button3" class="bg-red-500 py-2 px-4 rounded text-white">log title</button>
-		</div>
-		<hr>
 	
 		<div class="flex gap-4">
 			<div>
 				<button id="prop-1" class="bg-gray-500 py-2 px-4 rounded w-16 text-white">off</button>
 			</div>
 			<div>
-				<button id="prop-2" class="bg-purple-500 py-2 px-4 rounded text-white">Show Students</button>
+				<button id="prop-2" class="bg-purple-500 py-2 px-4 rounded text-white">See Stray Kids Members</button>
 				<div id="student-list" class="mt-4"></div>
 			</div>
 			<div class="flex flex-col gap-4 items">
-				<input id="prop-3" type="text" class="p-2 rounded text-black" placeholder="Type something">
+				<input id="prop-3" type="text" class="p-2 rounded text-black" placeholder="Favourite SKZ album?">
 				<p id="error-msg" class="hidden text-red-500 text-sm">This field cannot be empty.</p>
 				<button id="submit-btn" class="bg-teal-500 py-2 px-4 rounded w-24 text-white">submit</button>
 			</div>
@@ -40,7 +31,7 @@
 <script>
 	let name = 'kuromi'
 	const age = 19
-	const gwapo = true
+	const bunny = true
 	const attributes = ['cute', 'cheeky', 'cool']
 	const details = { id: '2025USC', year: 2025, school: 'USC' }
 
@@ -63,23 +54,6 @@
 		}
 	}
 
-	{
-		document.getElementById('button1-1').addEventListener('click', () =>
-			console.log('button `log by id using getElementById` has been clicked')
-		)
-		document.querySelector('#button1-2').addEventListener('click', () =>
-			console.log('button `log by id using querySelector` has been clicked')
-		)
-		document.querySelector('.button2').addEventListener('click', () =>
-			console.log('button `log by class` has been clicked')
-		)
-		document.querySelector('span').addEventListener('click', () =>
-			console.log('button `log by element` has been clicked')
-		)
-		document.getElementById('button3').addEventListener('click', () =>
-			console.log(document.getElementById('title').innerText)
-		)
-	}
 
 	{
 		document.getElementById('prop-1').addEventListener('click', () => {
@@ -97,11 +71,11 @@
 
 		document.getElementById('prop-2').addEventListener('click', () => {
 			const prop2 = document.getElementById('prop-2')
-			if (prop2.innerText == 'Show Students') {
-				prop2.innerText = 'Hide Students'
+			if (prop2.innerText == 'See Stray Kids Members') {
+				prop2.innerText = 'Hide'
 				showStudents()
 			} else {
-				prop2.innerText = 'Show Students'
+				prop2.innerText = 'See Stray Kids Members'
 				const studentList = document.getElementById('student-list')
 				studentList.innerHTML = ''
 			}
@@ -111,7 +85,7 @@
 			const studentList = document.getElementById('student-list')
 			const ul = document.createElement("ul")
 			ul.classList.add("list-disc", "list-inside")
-			const students = ['Alice', 'Bob', 'Charlie', 'David', 'Eve']
+			const students = ['Lee Know', 'Chan', 'Changbin', 'Hyunjin', 'Han' , 'Felix', 'Seungmin', 'I.N']
 			students.forEach(student => {
 				const li = document.createElement("li")
 				li.innerText = student
